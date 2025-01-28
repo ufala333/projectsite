@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+}
+
+.switch-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.switch-label {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.switch {
+    position: relative;
+    width: 80px;
+    height: 40px;
+    background: #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.switch:before {
+    content: 'Вверх';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #fff;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.switch:after {
+    content: 'Вниз';
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #fff;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.toggle {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.switch:active .toggle {
+    transform: translateX(40px);
+}
+
+.switch:active:before {
+    opacity: 0;
+}
+
+.switch:active:after {
+    opacity: 1;
+}
